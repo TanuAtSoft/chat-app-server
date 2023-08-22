@@ -42,7 +42,7 @@ exports.upload = multer({
   limits: { fileSize: 1024 * 1024 * 50 }, // 50MB
   // FILTER OPTIONS LIKE VALIDATING FILE EXTENSION
   fileFilter: function (req, file, done) {
-    const filetypes = /jpeg|jpg|png/;
+    const filetypes = /jpeg|jpg|png|gif|pdf/;
     const extname = filetypes.test(
       path.extname(file.originalname).toLowerCase()
     );

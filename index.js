@@ -20,7 +20,7 @@ mongoose.connect(process.env.DB_URL, {
     // we're connected!
     console.log("we are connected with database");
   });
-  app.use(cors())
+
   app.use(
     cors({
       origin: "*",

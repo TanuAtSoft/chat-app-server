@@ -2,9 +2,7 @@ const UserModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { sendResponse } = require("../helpers/requestHandlerHelper");
-
 const { sendEmail } = require("../services/emailSender");
-
 
 exports.registerUser = async (req, res) => {
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -74,8 +72,6 @@ exports.loginUser = async (req, res) => {
           },
           process.env.ACCESS_TOKEN_SECRET,
           { expiresIn: "8h" }
-
-
           
         );
         let user;
